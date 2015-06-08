@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AirAtlantiqueModelStoreContainer" CdmEntityContainer="AirAtlantiqueEntities">
+    <EntitySetMapping Name="Avion">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.Avion">
+        <MappingFragment StoreEntitySet="Avion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="conso" ColumnName="conso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Capacite">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.Capacite">
+        <MappingFragment StoreEntitySet="Capacite">
+          <ScalarProperty Name="idAvion" ColumnName="idAvion" />
+          <ScalarProperty Name="idTypePlace" ColumnName="idTypePlace" />
+          <ScalarProperty Name="nbPlace" ColumnName="nbPlace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypePlace">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.TypePlace">
+        <MappingFragment StoreEntitySet="TypePlace">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VentesPlaces">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.VentesPlaces">
+        <MappingFragment StoreEntitySet="VentesPlaces">
+          <ScalarProperty Name="idVol" ColumnName="idVol" />
+          <ScalarProperty Name="idTypePlace" ColumnName="idTypePlace" />
+          <ScalarProperty Name="nbPlace" ColumnName="nbPlace" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ville">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.Ville">
+        <MappingFragment StoreEntitySet="Ville">
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vol">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.Vol">
+        <MappingFragment StoreEntitySet="Vol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateVol" ColumnName="dateVol" />
+          <ScalarProperty Name="villeDepart" ColumnName="villeDepart" />
+          <ScalarProperty Name="villeArrive" ColumnName="villeArrive" />
+          <ScalarProperty Name="idAvion" ColumnName="idAvion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapaciteLigne">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.CapaciteLigne">
+        <MappingFragment StoreEntitySet="CapaciteLigne">
+          <ScalarProperty Name="villeDepart" ColumnName="villeDepart" />
+          <ScalarProperty Name="villeArrive" ColumnName="villeArrive" />
+          <ScalarProperty Name="capaciteLigne1" ColumnName="capaciteLigne" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapaciteVol">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.CapaciteVol">
+        <MappingFragment StoreEntitySet="CapaciteVol">
+          <ScalarProperty Name="idVol" ColumnName="idVol" />
+          <ScalarProperty Name="capacite" ColumnName="capacite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frequentation">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.Frequentation">
+        <MappingFragment StoreEntitySet="Frequentation">
+          <ScalarProperty Name="villeDepart" ColumnName="villeDepart" />
+          <ScalarProperty Name="villeArrive" ColumnName="villeArrive" />
+          <ScalarProperty Name="tauxRemplissage" ColumnName="tauxRemplissage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VentesPlacesLigne">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.VentesPlacesLigne">
+        <MappingFragment StoreEntitySet="VentesPlacesLigne">
+          <ScalarProperty Name="villeDepart" ColumnName="villeDepart" />
+          <ScalarProperty Name="villeArrive" ColumnName="villeArrive" />
+          <ScalarProperty Name="ventesLigne" ColumnName="ventesLigne" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VentesPlacesVol">
+      <EntityTypeMapping TypeName="AirAtlantiqueModel.VentesPlacesVol">
+        <MappingFragment StoreEntitySet="VentesPlacesVol">
+          <ScalarProperty Name="idVol" ColumnName="idVol" />
+          <ScalarProperty Name="ventes" ColumnName="ventes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

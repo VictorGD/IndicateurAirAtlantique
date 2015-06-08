@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AirAtlantiqueModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AirAtlantiqueModelStoreContainer">
+    <EntitySet Name="Avion" EntityType="AirAtlantiqueModel.Store.Avion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Capacite" EntityType="AirAtlantiqueModel.Store.Capacite" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TypePlace" EntityType="AirAtlantiqueModel.Store.TypePlace" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VentesPlaces" EntityType="AirAtlantiqueModel.Store.VentesPlaces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ville" EntityType="AirAtlantiqueModel.Store.Ville" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vol" EntityType="AirAtlantiqueModel.Store.Vol" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CapaciteLigne" EntityType="AirAtlantiqueModel.Store.CapaciteLigne" store:Type="Views" store:Schema="dbo" store:Name="CapaciteLigne">
+      <DefiningQuery>SELECT 
+      [CapaciteLigne].[villeDepart] AS [villeDepart], 
+      [CapaciteLigne].[villeArrive] AS [villeArrive], 
+      [CapaciteLigne].[capaciteLigne] AS [capaciteLigne]
+      FROM [dbo].[CapaciteLigne] AS [CapaciteLigne]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CapaciteVol" EntityType="AirAtlantiqueModel.Store.CapaciteVol" store:Type="Views" store:Schema="dbo" store:Name="CapaciteVol">
+      <DefiningQuery>SELECT 
+      [CapaciteVol].[idVol] AS [idVol], 
+      [CapaciteVol].[capacite] AS [capacite]
+      FROM [dbo].[CapaciteVol] AS [CapaciteVol]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Frequentation" EntityType="AirAtlantiqueModel.Store.Frequentation" store:Type="Views" store:Schema="dbo" store:Name="Frequentation">
+      <DefiningQuery>SELECT 
+      [Frequentation].[villeDepart] AS [villeDepart], 
+      [Frequentation].[villeArrive] AS [villeArrive], 
+      [Frequentation].[tauxRemplissage] AS [tauxRemplissage]
+      FROM [dbo].[Frequentation] AS [Frequentation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VentesPlacesLigne" EntityType="AirAtlantiqueModel.Store.VentesPlacesLigne" store:Type="Views" store:Schema="dbo" store:Name="VentesPlacesLigne">
+      <DefiningQuery>SELECT 
+      [VentesPlacesLigne].[villeDepart] AS [villeDepart], 
+      [VentesPlacesLigne].[villeArrive] AS [villeArrive], 
+      [VentesPlacesLigne].[ventesLigne] AS [ventesLigne]
+      FROM [dbo].[VentesPlacesLigne] AS [VentesPlacesLigne]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VentesPlacesVol" EntityType="AirAtlantiqueModel.Store.VentesPlacesVol" store:Type="Views" store:Schema="dbo" store:Name="VentesPlacesVol">
+      <DefiningQuery>SELECT 
+      [VentesPlacesVol].[idVol] AS [idVol], 
+      [VentesPlacesVol].[ventes] AS [ventes]
+      FROM [dbo].[VentesPlacesVol] AS [VentesPlacesVol]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="fk_avion" Association="AirAtlantiqueModel.Store.fk_avion">
+      <End Role="Avion" EntitySet="Avion" />
+      <End Role="Capacite" EntitySet="Capacite" />
+    </AssociationSet>
+    <AssociationSet Name="fk_avionAffecte" Association="AirAtlantiqueModel.Store.fk_avionAffecte">
+      <End Role="Avion" EntitySet="Avion" />
+      <End Role="Vol" EntitySet="Vol" />
+    </AssociationSet>
+    <AssociationSet Name="fk_typePlace" Association="AirAtlantiqueModel.Store.fk_typePlace">
+      <End Role="TypePlace" EntitySet="TypePlace" />
+      <End Role="Capacite" EntitySet="Capacite" />
+    </AssociationSet>
+    <AssociationSet Name="fk_typePlaceVente" Association="AirAtlantiqueModel.Store.fk_typePlaceVente">
+      <End Role="TypePlace" EntitySet="TypePlace" />
+      <End Role="VentesPlaces" EntitySet="VentesPlaces" />
+    </AssociationSet>
+    <AssociationSet Name="fk_villeArrive" Association="AirAtlantiqueModel.Store.fk_villeArrive">
+      <End Role="Ville" EntitySet="Ville" />
+      <End Role="Vol" EntitySet="Vol" />
+    </AssociationSet>
+    <AssociationSet Name="fk_villeDepart" Association="AirAtlantiqueModel.Store.fk_villeDepart">
+      <End Role="Ville" EntitySet="Ville" />
+      <End Role="Vol" EntitySet="Vol" />
+    </AssociationSet>
+    <AssociationSet Name="fk_vol" Association="AirAtlantiqueModel.Store.fk_vol">
+      <End Role="Vol" EntitySet="Vol" />
+      <End Role="VentesPlaces" EntitySet="VentesPlaces" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Avion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="conso" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Capacite">
+    <Key>
+      <PropertyRef Name="idAvion" />
+      <PropertyRef Name="idTypePlace" />
+    </Key>
+    <Property Name="idAvion" Type="int" Nullable="false" />
+    <Property Name="idTypePlace" Type="int" Nullable="false" />
+    <Property Name="nbPlace" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypePlace">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="nvarchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="VentesPlaces">
+    <Key>
+      <PropertyRef Name="idVol" />
+      <PropertyRef Name="idTypePlace" />
+    </Key>
+    <Property Name="idVol" Type="int" Nullable="false" />
+    <Property Name="idTypePlace" Type="int" Nullable="false" />
+    <Property Name="nbPlace" Type="int" Nullable="false" />
+    <Property Name="prix" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ville">
+    <Key>
+      <PropertyRef Name="nom" />
+    </Key>
+    <Property Name="nom" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="latitude" Type="float" Nullable="false" />
+    <Property Name="longitude" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="dateVol" Type="datetime" Nullable="false" />
+    <Property Name="villeDepart" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="villeArrive" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="idAvion" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « AirAtlantique.dbo.CapaciteLigne » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+  <EntityType Name="CapaciteLigne">
+    <Key>
+      <PropertyRef Name="villeDepart" />
+      <PropertyRef Name="villeArrive" />
+    </Key>
+    <Property Name="villeDepart" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="villeArrive" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="capaciteLigne" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « AirAtlantique.dbo.CapaciteVol » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+  <EntityType Name="CapaciteVol">
+    <Key>
+      <PropertyRef Name="idVol" />
+    </Key>
+    <Property Name="idVol" Type="int" Nullable="false" />
+    <Property Name="capacite" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « AirAtlantique.dbo.Frequentation » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+  <EntityType Name="Frequentation">
+    <Key>
+      <PropertyRef Name="villeDepart" />
+      <PropertyRef Name="villeArrive" />
+    </Key>
+    <Property Name="villeDepart" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="villeArrive" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="tauxRemplissage" Type="numeric" Precision="24" Scale="12" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « AirAtlantique.dbo.VentesPlacesLigne » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+  <EntityType Name="VentesPlacesLigne">
+    <Key>
+      <PropertyRef Name="villeDepart" />
+      <PropertyRef Name="villeArrive" />
+    </Key>
+    <Property Name="villeDepart" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="villeArrive" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="ventesLigne" Type="int" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « AirAtlantique.dbo.VentesPlacesVol » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+  <EntityType Name="VentesPlacesVol">
+    <Key>
+      <PropertyRef Name="idVol" />
+    </Key>
+    <Property Name="idVol" Type="int" Nullable="false" />
+    <Property Name="ventes" Type="int" />
+  </EntityType>
+  <Association Name="fk_avion">
+    <End Role="Avion" Type="AirAtlantiqueModel.Store.Avion" Multiplicity="1" />
+    <End Role="Capacite" Type="AirAtlantiqueModel.Store.Capacite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Capacite">
+        <PropertyRef Name="idAvion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_avionAffecte">
+    <End Role="Avion" Type="AirAtlantiqueModel.Store.Avion" Multiplicity="1" />
+    <End Role="Vol" Type="AirAtlantiqueModel.Store.Vol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vol">
+        <PropertyRef Name="idAvion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_typePlace">
+    <End Role="TypePlace" Type="AirAtlantiqueModel.Store.TypePlace" Multiplicity="1" />
+    <End Role="Capacite" Type="AirAtlantiqueModel.Store.Capacite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePlace">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Capacite">
+        <PropertyRef Name="idTypePlace" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_typePlaceVente">
+    <End Role="TypePlace" Type="AirAtlantiqueModel.Store.TypePlace" Multiplicity="1" />
+    <End Role="VentesPlaces" Type="AirAtlantiqueModel.Store.VentesPlaces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePlace">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="VentesPlaces">
+        <PropertyRef Name="idTypePlace" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_villeArrive">
+    <End Role="Ville" Type="AirAtlantiqueModel.Store.Ville" Multiplicity="1" />
+    <End Role="Vol" Type="AirAtlantiqueModel.Store.Vol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ville">
+        <PropertyRef Name="nom" />
+      </Principal>
+      <Dependent Role="Vol">
+        <PropertyRef Name="villeArrive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_villeDepart">
+    <End Role="Ville" Type="AirAtlantiqueModel.Store.Ville" Multiplicity="1" />
+    <End Role="Vol" Type="AirAtlantiqueModel.Store.Vol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ville">
+        <PropertyRef Name="nom" />
+      </Principal>
+      <Dependent Role="Vol">
+        <PropertyRef Name="villeDepart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_vol">
+    <End Role="Vol" Type="AirAtlantiqueModel.Store.Vol" Multiplicity="1" />
+    <End Role="VentesPlaces" Type="AirAtlantiqueModel.Store.VentesPlaces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="VentesPlaces">
+        <PropertyRef Name="idVol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

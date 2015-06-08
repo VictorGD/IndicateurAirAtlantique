@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9af978e4437e4c468e2b95235f9592e1" Name="Diagramme1">
+        <EntityTypeShape EntityType="AirAtlantiqueModel.Avion" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.Capacite" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.TypePlace" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.VentesPlaces" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.Ville" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.Vol" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.CapaciteLigne" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.CapaciteVol" Width="1.5" PointX="2.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.Frequentation" Width="1.5" PointX="4.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.VentesPlacesLigne" Width="1.5" PointX="6.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AirAtlantiqueModel.VentesPlacesVol" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="AirAtlantiqueModel.fk_avion" ManuallyRouted="false" />
+        <AssociationConnector Association="AirAtlantiqueModel.fk_avionAffecte" ManuallyRouted="false" />
+        <AssociationConnector Association="AirAtlantiqueModel.fk_typePlace" ManuallyRouted="false" />
+        <AssociationConnector Association="AirAtlantiqueModel.fk_typePlaceVente" ManuallyRouted="false" />
+        <AssociationConnector Association="AirAtlantiqueModel.fk_vol" ManuallyRouted="false" />
+        <AssociationConnector Association="AirAtlantiqueModel.fk_villeArrive" ManuallyRouted="false" />
+        <AssociationConnector Association="AirAtlantiqueModel.fk_villeDepart" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

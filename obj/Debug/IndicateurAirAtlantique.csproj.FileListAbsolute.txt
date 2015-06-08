@@ -1,0 +1,16 @@
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\bin\Debug\IndicateurAirAtlantique.exe.config
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\bin\Debug\IndicateurAirAtlantique.exe
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\bin\Debug\IndicateurAirAtlantique.pdb
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\bin\Debug\EntityFramework.dll
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\bin\Debug\EntityFramework.xml
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\IndicateurAirAtlantique.csprojResolveAssemblyReference.cache
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\MainWindow.baml
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\MainWindow.g.cs
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\App.g.cs
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\IndicateurAirAtlantique_MarkupCompile.cache
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\IndicateurAirAtlantique.g.resources
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\IndicateurAirAtlantique.Properties.Resources.resources
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\IndicateurAirAtlantique.csproj.GenerateResource.Cache
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\IndicateurAirAtlantique.exe
+C:\Users\Victor\Documents\EPSI\B2\Projet\Projet_Air_Atlantique\IndicateurAirAtlantique\IndicateurAirAtlantique\obj\Debug\IndicateurAirAtlantique.pdb
